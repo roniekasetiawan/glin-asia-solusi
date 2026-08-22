@@ -1,3 +1,8 @@
+---
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+const url = (path: string) => `${basePath}${path}`;
+---
+
 <footer class="bg-[#071633] py-12 text-white">
   <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-8">
     <div>
@@ -15,9 +20,9 @@
     <div>
       <h3 class="text-sm font-extrabold uppercase text-djp-gold">Services</h3>
       <ul class="mt-4 space-y-3 text-sm text-slate-300">
-        <li><a href="/services/accounting-service/" class="hover:text-djp-gold">Accounting Service</a></li>
-        <li><a href="/services/tax-service/" class="hover:text-djp-gold">Tax Service</a></li>
-        <li><a href="/services/finance-assistant/" class="hover:text-djp-gold">Finance Assistant</a></li>
+        <li><a href={url('/services/accounting-service/')} class="hover:text-djp-gold">Accounting Service</a></li>
+        <li><a href={url('/services/tax-service/')} class="hover:text-djp-gold">Tax Service</a></li>
+        <li><a href={url('/services/finance-assistant/')} class="hover:text-djp-gold">Finance Assistant</a></li>
       </ul>
     </div>
     <div>
@@ -32,9 +37,9 @@
   <div class="mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/10 px-5 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between lg:px-8">
     <p>&copy; <span id="year"></span> PT. Glin Asia Solusi. All rights reserved.</p>
     <div class="flex gap-4">
-      <a href="/about/" class="hover:text-djp-gold">About</a>
-      <a href="/contact/" class="hover:text-djp-gold">Contact</a>
-      <a href="/blog/" class="hover:text-djp-gold">Blog</a>
+      <a href={url('/about/')} class="hover:text-djp-gold">About</a>
+      <a href={url('/contact/')} class="hover:text-djp-gold">Contact</a>
+      <a href={url('/blog/')} class="hover:text-djp-gold">Blog</a>
     </div>
   </div>
 </footer>

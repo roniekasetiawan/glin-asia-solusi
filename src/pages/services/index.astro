@@ -1,5 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+const url = (path: string) => `${basePath}${path}`;
 ---
 
 <Layout title="Services | PT. Glin Asia Solusi" description="Layanan PT. Glin Asia Solusi untuk accounting service, tax service, finance assistant, transfer pricing, dan pendampingan pemeriksaan pajak perusahaan." canonicalPath="/services/" active="services">
@@ -13,9 +16,9 @@ import Layout from '../../layouts/Layout.astro';
   <section class="bg-white py-16 sm:py-20">
     <div class="mx-auto max-w-7xl px-5 lg:px-8">
       <div class="grid gap-6 lg:grid-cols-3">
-        <a href="/services/accounting-service/" class="card p-8"><span class="text-sm font-extrabold text-djp-gold">01.</span><i data-lucide="book-open-check" class="mt-6 h-9 w-9 text-djp-navy"></i><h2 class="mt-6 text-2xl font-extrabold text-djp-deep">Accounting Service</h2><p class="mt-4 leading-7 text-slate-600">Pembukuan, laporan keuangan, rekonsiliasi bank, pencatatan transaksi, dan review dokumen akuntansi.</p><span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-djp-navy">Lihat detail <i data-lucide="arrow-right" class="h-4 w-4"></i></span></a>
-        <a href="/services/tax-service/" class="card p-8"><span class="text-sm font-extrabold text-djp-gold">02.</span><i data-lucide="receipt-text" class="mt-6 h-9 w-9 text-djp-navy"></i><h2 class="mt-6 text-2xl font-extrabold text-djp-deep">Tax Service</h2><p class="mt-4 leading-7 text-slate-600">Perhitungan, pembayaran, pelaporan pajak masa dan tahunan, review kepatuhan, serta dukungan pemeriksaan.</p><span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-djp-navy">Lihat detail <i data-lucide="arrow-right" class="h-4 w-4"></i></span></a>
-        <a href="/services/finance-assistant/" class="card p-8"><span class="text-sm font-extrabold text-djp-gold">03.</span><i data-lucide="folder-cog" class="mt-6 h-9 w-9 text-djp-navy"></i><h2 class="mt-6 text-2xl font-extrabold text-djp-deep">Finance Assistant</h2><p class="mt-4 leading-7 text-slate-600">Asistensi administrasi finance, arsip dokumen, payment tracking, dan persiapan data untuk akuntansi dan pajak.</p><span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-djp-navy">Lihat detail <i data-lucide="arrow-right" class="h-4 w-4"></i></span></a>
+        <a href={url('/services/accounting-service/')} class="card p-8"><span class="text-sm font-extrabold text-djp-gold">01.</span><i data-lucide="book-open-check" class="mt-6 h-9 w-9 text-djp-navy"></i><h2 class="mt-6 text-2xl font-extrabold text-djp-deep">Accounting Service</h2><p class="mt-4 leading-7 text-slate-600">Pembukuan, laporan keuangan, rekonsiliasi bank, pencatatan transaksi, dan review dokumen akuntansi.</p><span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-djp-navy">Lihat detail <i data-lucide="arrow-right" class="h-4 w-4"></i></span></a>
+        <a href={url('/services/tax-service/')} class="card p-8"><span class="text-sm font-extrabold text-djp-gold">02.</span><i data-lucide="receipt-text" class="mt-6 h-9 w-9 text-djp-navy"></i><h2 class="mt-6 text-2xl font-extrabold text-djp-deep">Tax Service</h2><p class="mt-4 leading-7 text-slate-600">Perhitungan, pembayaran, pelaporan pajak masa dan tahunan, review kepatuhan, serta dukungan pemeriksaan.</p><span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-djp-navy">Lihat detail <i data-lucide="arrow-right" class="h-4 w-4"></i></span></a>
+        <a href={url('/services/finance-assistant/')} class="card p-8"><span class="text-sm font-extrabold text-djp-gold">03.</span><i data-lucide="folder-cog" class="mt-6 h-9 w-9 text-djp-navy"></i><h2 class="mt-6 text-2xl font-extrabold text-djp-deep">Finance Assistant</h2><p class="mt-4 leading-7 text-slate-600">Asistensi administrasi finance, arsip dokumen, payment tracking, dan persiapan data untuk akuntansi dan pajak.</p><span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-djp-navy">Lihat detail <i data-lucide="arrow-right" class="h-4 w-4"></i></span></a>
       </div>
     </div>
   </section>

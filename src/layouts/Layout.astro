@@ -20,7 +20,10 @@ const {
   keywords = 'konsultan pajak Jakarta, jasa pembukuan perusahaan, jasa pajak perusahaan, finance assistant, PT Glin Asia Solusi'
 } = Astro.props;
 
-const canonicalUrl = new URL(canonicalPath, Astro.site ?? 'https://glinasiasolusi.id').toString();
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pathWithBase = canonicalPath === '/' ? `${basePath}/` : `${basePath}${canonicalPath}`;
+const canonicalUrl = new URL(pathWithBase, Astro.site ?? 'https://roniekasetiawan.github.io').toString();
+const scriptPath = `${basePath}/scripts/main.js`;
 ---
 
 <!DOCTYPE html>
@@ -53,6 +56,6 @@ const canonicalUrl = new URL(canonicalPath, Astro.site ?? 'https://glinasiasolus
     <Footer />
     <WhatsAppModal />
     <script is:inline src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script is:inline src="/scripts/main.js"></script>
+    <script is:inline src={scriptPath}></script>
   </body>
 </html>

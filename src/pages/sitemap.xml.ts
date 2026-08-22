@@ -1,6 +1,6 @@
 import { blogPosts } from '../data/blogPosts';
 
-const site = 'https://glinasiasolusi.id';
+const site = 'https://roniekasetiawan.github.io/glin-asia-solusi';
 const staticPages = [
   '/',
   '/services/',
