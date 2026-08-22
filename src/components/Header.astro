@@ -1,0 +1,56 @@
+---
+interface Props {
+  active?: 'services' | 'about' | 'contact' | 'blog';
+}
+
+const { active } = Astro.props;
+---
+
+<header class="site-header header-transparent sticky top-0 z-50">
+    <nav class="nav-shell mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-6" aria-label="Navigasi utama">
+    <a href="/" class="flex items-center gap-3" aria-label="PT. Glin Asia Solusi">
+      <span class="brand-mark">GA</span>
+      <span class="leading-tight">
+        <span class="brand-title block text-lg font-extrabold text-djp-deep">Glin Asia Solusi</span>
+        <span class="brand-subtitle block text-xs font-semibold uppercase text-slate-500">Corporate Tax Advisory</span>
+      </span>
+    </a>
+
+    <div class="hidden items-center gap-8 lg:flex">
+      <div class="dropdown">
+        <a href="/services/" class:list={['nav-link inline-flex items-center gap-1', { active: active === 'services' }]}>
+          Services <i data-lucide="chevron-down" class="h-4 w-4"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/services/accounting-service/" class="dropdown-item">Accounting Service</a>
+          <a href="/services/tax-service/" class="dropdown-item">Tax Service</a>
+          <a href="/services/finance-assistant/" class="dropdown-item">Finance Assistant</a>
+        </div>
+      </div>
+      <a href="/about/" class:list={['nav-link', { active: active === 'about' }]}>About Us</a>
+      <a href="/contact/" class:list={['nav-link', { active: active === 'contact' }]}>Contact</a>
+      <a href="/blog/" class:list={['nav-link', { active: active === 'blog' }]}>Blog</a>
+    </div>
+
+    <a href="#" data-wa-message="Halo PT. Glin Asia Solusi, saya ingin menjadwalkan konsultasi awal." class="hidden rounded bg-djp-gold px-5 py-3 text-sm font-bold text-djp-deep shadow-sm transition hover:bg-djp-goldDark lg:inline-flex">
+      Schedule a Call
+    </a>
+
+    <button id="mobileMenuButton" class="inline-flex h-11 w-11 items-center justify-center rounded border border-slate-200 text-djp-deep lg:hidden" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu navigasi">
+      <i data-lucide="menu" class="h-5 w-5"></i>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="hidden border-t border-slate-100 bg-white px-5 py-4 lg:hidden">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2">
+      <a href="/services/" class="mobile-link rounded px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Services</a>
+      <a href="/services/accounting-service/" class="mobile-link rounded px-6 py-2 text-sm font-semibold text-slate-500 hover:bg-slate-50">Accounting Service</a>
+      <a href="/services/tax-service/" class="mobile-link rounded px-6 py-2 text-sm font-semibold text-slate-500 hover:bg-slate-50">Tax Service</a>
+      <a href="/services/finance-assistant/" class="mobile-link rounded px-6 py-2 text-sm font-semibold text-slate-500 hover:bg-slate-50">Finance Assistant</a>
+      <a href="/about/" class="mobile-link rounded px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">About Us</a>
+      <a href="/contact/" class="mobile-link rounded px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Contact</a>
+      <a href="/blog/" class="mobile-link rounded px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Blog</a>
+      <a href="#" data-wa-message="Halo PT. Glin Asia Solusi, saya ingin menjadwalkan konsultasi awal." class="mobile-link mt-2 rounded bg-djp-gold px-4 py-3 text-center text-sm font-bold text-djp-deep">Schedule a Call</a>
+    </div>
+  </div>
+</header>

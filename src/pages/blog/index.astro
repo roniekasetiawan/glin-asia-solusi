@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { blogPosts } from '../../data/blogPosts';
+---
+
+<Layout title="Blog | PT. Glin Asia Solusi" description="Blog PT. Glin Asia Solusi tentang pembukuan, pajak perusahaan, CoreTax, finance assistant, dan mitigasi risiko pemeriksaan pajak." canonicalPath="/blog/" active="blog">
+  <section class="page-hero">
+    <div class="mx-auto max-w-7xl px-5 py-16 text-white sm:py-20 lg:px-8">
+      <p class="text-sm font-extrabold uppercase text-djp-gold">Blog</p>
+      <h1 class="mt-5 max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">Insight akuntansi, pajak, dan administrasi finance perusahaan.</h1>
+      <p class="mt-5 max-w-2xl leading-8 text-slate-200">Artikel ringkas untuk membantu owner, finance, dan manajemen memahami isu yang sering muncul dalam pengelolaan keuangan perusahaan.</p>
+    </div>
+  </section>
+  <section class="bg-white py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-3">
+        {blogPosts.map((post) => (
+          <article class="card p-7">
+            <span class="rounded bg-djp-gold/20 px-3 py-1 text-xs font-bold text-djp-deep">{post.category}</span>
+            <h2 class="mt-5 text-xl font-extrabold text-djp-deep">{post.title}</h2>
+            <p class="mt-4 text-sm leading-7 text-slate-600">{post.description}</p>
+            <a href={`/blog/${post.slug}/`} class="mt-5 inline-flex text-sm font-bold text-djp-navy">Baca artikel</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTAForm from '../components/CTAForm.astro';
+---
+
+<Layout title="Contact | PT. Glin Asia Solusi" description="Hubungi PT. Glin Asia Solusi untuk konsultasi pembukuan, pajak perusahaan, finance assistant, transfer pricing, dan pendampingan pemeriksaan pajak." canonicalPath="/contact/" active="contact">
+  <section class="page-hero">
+    <div class="mx-auto max-w-7xl px-5 py-16 text-white sm:py-20 lg:px-8">
+      <p class="text-sm font-extrabold uppercase text-djp-gold">Contact</p>
+      <h1 class="mt-5 max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl">Diskusikan langsung kebutuhan pembukuan dan perpajakan perusahaan Anda.</h1>
+      <p class="mt-5 max-w-2xl leading-8 text-slate-200">Isi form singkat di bawah. Sistem akan membuka WhatsApp dengan pesan yang sudah tersusun agar tim kami dapat memahami kebutuhan awal Anda.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-14">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="flex items-start gap-4">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-djp-soft text-djp-navy"><i data-lucide="map-pin" class="h-6 w-6"></i></div>
+          <div><p class="text-xs font-extrabold uppercase text-slate-500">Find Me</p><p class="mt-2 leading-7 text-slate-700">Jakarta Selatan, DKI Jakarta, Indonesia</p><a href="https://maps.app.goo.gl/mJLyMuCJMkbuyzBE6" target="_blank" rel="noopener" class="mt-2 inline-flex text-sm font-bold text-djp-navy hover:text-djp-deep">Open in Google Maps</a></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-djp-soft text-djp-navy"><i data-lucide="mail" class="h-6 w-6"></i></div>
+          <div><p class="text-xs font-extrabold uppercase text-slate-500">Email Me</p><p class="mt-2 leading-7 text-slate-700">halo@glinasiasolusi.id</p></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-djp-soft text-djp-navy"><i data-lucide="phone" class="h-6 w-6"></i></div>
+          <div><p class="text-xs font-extrabold uppercase text-slate-500">Call Me</p><p class="mt-2 leading-7 text-slate-700">wa.me/xxx</p></div>
+        </div>
+      </div>
+      <div class="mt-12 overflow-hidden rounded-lg border border-slate-200 shadow-card">
+        <iframe title="Lokasi PT. Glin Asia Solusi di Google Maps" src="https://www.google.com/maps?q=PT.%20Glin%20Asia%20Solusi&output=embed" class="h-[320px] w-full sm:h-[420px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-djp-soft py-16 sm:py-20">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+      <div>
+        <p class="kicker">Send Inquiry</p>
+        <div class="gold-rule mt-3"></div>
+        <h2 class="mt-5 text-3xl font-extrabold text-djp-deep">Mulai dari ringkasan kebutuhan perusahaan.</h2>
+        <p class="mt-5 leading-8 text-slate-600">Form ini akan menyusun pesan WhatsApp otomatis sehingga diskusi awal lebih cepat dan jelas.</p>
+        <a href="#" data-wa-message="Halo PT. Glin Asia Solusi, saya ingin konsultasi langsung via WhatsApp." class="mt-8 inline-flex items-center gap-2 rounded bg-djp-gold px-6 py-4 text-sm font-bold text-djp-deep">Chat Our Team <i data-lucide="message-circle" class="h-4 w-4"></i></a>
+      </div>
+      <CTAForm />
+    </div>
+  </section>
+</Layout>

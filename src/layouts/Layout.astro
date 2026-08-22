@@ -1,0 +1,58 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppModal from '../components/WhatsAppModal.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  active?: 'services' | 'about' | 'contact' | 'blog';
+  keywords?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  active,
+  keywords = 'konsultan pajak Jakarta, jasa pembukuan perusahaan, jasa pajak perusahaan, finance assistant, PT Glin Asia Solusi'
+} = Astro.props;
+
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? 'https://glinasiasolusi.id').toString();
+---
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="PT. Glin Asia Solusi" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-jakarta antialiased">
+    <Header active={active} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppModal />
+    <script is:inline src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script is:inline src="/scripts/main.js"></script>
+  </body>
+</html>

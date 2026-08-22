@@ -1,0 +1,39 @@
+<form id="rfpForm" class="rounded-lg bg-white p-5 text-slate-700 shadow-premium sm:p-7">
+  <div class="grid gap-5 sm:grid-cols-2">
+    <label class="block">
+      <span class="text-sm font-bold text-djp-deep">Nama Lengkap</span>
+      <input required type="text" name="name" class="input-field mt-2 w-full rounded border border-slate-200 px-4 py-3 text-sm" placeholder="Nama Anda" />
+    </label>
+    <label class="block">
+      <span class="text-sm font-bold text-djp-deep">Nama Perusahaan</span>
+      <input required type="text" name="company" class="input-field mt-2 w-full rounded border border-slate-200 px-4 py-3 text-sm" placeholder="PT Contoh Indonesia" />
+    </label>
+    <label class="block">
+      <span class="text-sm font-bold text-djp-deep">Email Perusahaan</span>
+      <input required type="email" name="email" class="input-field mt-2 w-full rounded border border-slate-200 px-4 py-3 text-sm" placeholder="nama@perusahaan.co.id" />
+    </label>
+    <label class="block">
+      <span class="text-sm font-bold text-djp-deep">WhatsApp / Telepon</span>
+      <input required type="tel" name="phone" class="input-field mt-2 w-full rounded border border-slate-200 px-4 py-3 text-sm" placeholder="+62 812 0000 0000" />
+    </label>
+    <label class="block sm:col-span-2">
+      <span class="text-sm font-bold text-djp-deep">Pilihan Layanan</span>
+      <select required name="service" class="input-field mt-2 w-full rounded border border-slate-200 px-4 py-3 text-sm">
+        <option value="">Pilih layanan utama</option>
+        <option>Accounting Service</option>
+        <option>Tax Service</option>
+        <option>Finance Assistant</option>
+        <option>Transfer Pricing Documentation</option>
+        <option>Tax Audit Assistance</option>
+      </select>
+    </label>
+    <label class="block sm:col-span-2">
+      <span class="text-sm font-bold text-djp-deep">Ringkasan Kebutuhan</span>
+      <textarea required name="message" rows="5" class="input-field mt-2 w-full resize-none rounded border border-slate-200 px-4 py-3 text-sm" placeholder="Ceritakan kebutuhan perusahaan Anda."></textarea>
+    </label>
+  </div>
+  <button type="submit" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded bg-djp-gold px-6 py-4 text-sm font-extrabold text-djp-deep transition hover:bg-djp-goldDark">
+    Chat Our Team via WhatsApp
+    <i data-lucide="send" class="h-4 w-4"></i>
+  </button>
+</form>
